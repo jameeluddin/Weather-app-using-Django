@@ -1,0 +1,33 @@
+{% extends 'lookup/base.html' %}
+
+{% block content %}
+
+
+
+
+
+
+<br>
+
+
+{% if api %}
+    {% if api == "Error..." %}
+        There was an error, Please try again ...
+    {% else %}
+        <div class="jumbotron {{ cateogry_color }}">
+              <h1 class="display-4"> {{api.0.Category.Name}}</h1>
+              <p class="lead">{{api.0.ReportingArea}}   Air Quality: {{api.0.AQI}}</p>
+
+
+                {{ categoty_description }}
+
+
+        </div>
+         <br/>
+         <br/>
+    {% endif %}
+
+{% endif %}
+
+
+{% endblock %}
